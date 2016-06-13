@@ -1,0 +1,55 @@
+{
+    "title": "Spark Poll Response Schema",
+    "type": "array",
+    "items": {
+	    "type": "object",
+	    "properties": {
+	        "id": {
+	            "type": "string",
+	            "description" : "notification ID"
+	        },
+	        "name": {
+	            "type": "string",
+	            "description" : "notification name"
+	        },
+	        "resource": {
+	            "type": "string",
+	            "description" : "notification resource"
+	        },
+	        "event": {
+	            "type": "string",
+	            "description" : "notification event"
+	        },
+	        "filter": {
+	            "type": "string",
+	            "description" : "notification filter"
+	        },
+	        "data": {
+	            "type": "object",
+	            "description" : "notification data",
+	            "properties" : {
+	              "id": {
+	                  "type": "string",
+	                  "description" : "data ID"
+	              },
+	              "roomId": {
+	                  "type": "string",
+	                  "description" : "data roomId"
+	              },
+	              "personId": {
+	                  "type": "string",
+	                  "description" : "data personId"
+	              },
+	              "personEmail": {
+	                  "type": "string",
+	                  "description" : "data personEmail"
+	              },
+	              "created": {
+	                  "type": "string",
+	                  "description" : "data created"
+	              }              
+	            }
+	        }
+	    }
+    }
+}

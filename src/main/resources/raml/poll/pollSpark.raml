@@ -1,0 +1,24 @@
+#%RAML 0.8
+title: Spark Poll API
+version: 1
+protocols: [ HTTPS ]
+baseUri: https://api.base.url/v1/poll
+mediaType: application/json
+schemas:
+    - PollSpark: !include PollSpark.json
+
+/poll/spark:
+    displayName: Spark Poll
+    description: |
+        API to poll for spark messages
+    get:
+        description: |
+            Get cached spark messages
+        responses:
+            200:
+                description: service responding
+                body:
+                    application/json:
+                        schema: PollSpark
+            404:
+                description: No message

@@ -129,6 +129,22 @@
         					<removeOldOutput>false</removeOldOutput>
         				</configuration>
         			</execution>
+        			<execution>
+        				<id>pollApi</id>
+        				<goals>
+        					<goal>generate</goal>
+        				</goals>
+        				<phase>generate-sources</phase>
+        				<configuration>
+        					<sourceDirectory>${basedir}/src/main/resources/raml/poll</sourceDirectory>
+        					<outputDirectory>${project.build.directory}/java-gen</outputDirectory>
+        					<basePackageName>com.cisco.collab.dobby.relay.api.poll</basePackageName>
+        					<jaxrsVersion>1.1</jaxrsVersion>
+        					<useJsr303Annotations>false</useJsr303Annotations>
+        					<jsonMapper>jackson2</jsonMapper>
+        					<removeOldOutput>false</removeOldOutput>
+        				</configuration>
+        			</execution>
         		</executions>
         	</plugin>
             <plugin>
