@@ -1,0 +1,23 @@
+#%RAML 0.8
+title: Service Health Check
+version: 1
+protocols: [ HTTPS ]
+baseUri: https://example.base.url/api/v1
+mediaType: application/json
+schemas:
+    - Spark: !include Spark.json
+
+/spark:
+    displayName: Spark Callback
+    description: |
+        Protected API for service health check. Requires authorization header.
+    post:
+        description: |
+            Get service health check response with RBAC checks.
+        body:
+            application/json:
+                schema: Spark
+        responses:
+            200:
+                description: service responding
+                
