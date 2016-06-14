@@ -20,6 +20,16 @@
           <version>4.1.6.RELEASE</version>
         </dependency>
         <dependency>
+	         <groupId>com.googlecode.objectify</groupId>
+	          <artifactId>objectify</artifactId>
+	          <version>4.0.1</version>
+	    </dependency>
+        <dependency>
+	         <groupId>com.google.appengine</groupId>
+	          <artifactId>appengine-api-1.0-sdk</artifactId>
+	          <version>${appengine.api.version}</version>
+	    </dependency>
+        <!-- <dependency>
             <groupId>com.google.gcloud</groupId>
             <artifactId>gcloud-java-datastore</artifactId>
             <version>0.1.7</version>
@@ -29,7 +39,7 @@
 		            <artifactId>servlet-api</artifactId>
 		        </exclusion>
 		    </exclusions>
-        </dependency>
+        </dependency> -->
         <dependency>
             <groupId>com.googlecode.xmemcached</groupId>
             <artifactId>xmemcached</artifactId>
@@ -108,6 +118,18 @@
         <!-- for hot reload of the web application -->
         <outputDirectory>${project.build.directory}/${project.build.finalName}/WEB-INF/classes</outputDirectory>
         <plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.1</version>
+				<configuration>
+					<source>${java-version}</source>
+					<target>${java-version}</target>
+					<compilerArgument>-Xlint:all</compilerArgument>
+					<showWarnings>true</showWarnings>
+					<showDeprecation>true</showDeprecation>
+				</configuration>
+			</plugin>
         	<plugin>
         		<groupId>org.raml.plugins</groupId>
         		<artifactId>raml-jaxrs-maven-plugin</artifactId>
