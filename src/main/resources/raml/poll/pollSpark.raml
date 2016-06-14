@@ -22,3 +22,19 @@ schemas:
                         schema: PollSpark
             404:
                 description: No message
+
+/poll/{channelId}:
+    displayName: Poll Channel
+    description: |
+        API to poll for spark messages on specific channel
+    get:
+        description: |
+            Get cached spark messages on specific channel
+        responses:
+            200:
+                description: service responding
+                body:
+                    application/json:
+                        schema: PollSpark
+            404:
+                description: No message

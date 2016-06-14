@@ -20,4 +20,18 @@ schemas:
         responses:
             200:
                 description: service responding
+
+/spark/{channelId}:
+    displayName: Spark Channel
+    description: |
+        Callback API for specific channel
+    post:
+        description: |
+            Notify spark message creation on specific channel
+        body:
+            application/json:
+                schema: Spark
+        responses:
+            200:
+                description: notification accepted
                 

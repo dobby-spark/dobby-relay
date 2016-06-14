@@ -29,6 +29,11 @@
 	          <artifactId>appengine-api-1.0-sdk</artifactId>
 	          <version>${appengine.api.version}</version>
 	    </dependency>
+	    <dependency>
+		    <groupId>javax.servlet</groupId>
+		    <artifactId>servlet-api</artifactId>
+		    <version>2.5</version>
+		</dependency>
         <!-- <dependency>
             <groupId>com.google.gcloud</groupId>
             <artifactId>gcloud-java-datastore</artifactId>
@@ -39,7 +44,7 @@
 		            <artifactId>servlet-api</artifactId>
 		        </exclusion>
 		    </exclusions>
-        </dependency> -->
+        </dependency>
         <dependency>
             <groupId>com.googlecode.xmemcached</groupId>
             <artifactId>xmemcached</artifactId>
@@ -50,7 +55,7 @@
 		            <artifactId>servlet-api</artifactId>
 		        </exclusion>
 		    </exclusions>
-        </dependency>
+        </dependency> -->
 		<dependency>
 		    <groupId>commons-logging</groupId>
 		    <artifactId>commons-logging</artifactId>
