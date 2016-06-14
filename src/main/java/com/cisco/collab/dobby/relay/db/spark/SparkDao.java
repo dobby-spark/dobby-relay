@@ -3,7 +3,7 @@ package com.cisco.collab.dobby.relay.db.spark;
 import java.util.List;
 
 public interface SparkDao {
-    void push(String notification);
-    String pop();
-    List<String> popAll();
+    void push(String appId, String notification);
+    String pop(String appId);
+    List<String> popAll(String appId);
 }

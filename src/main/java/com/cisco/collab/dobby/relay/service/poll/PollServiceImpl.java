@@ -16,9 +16,9 @@ public class PollServiceImpl implements PollService {
     @Autowired
     SparkService spark;
     
-    public List<PollSpark> pollSparkNotifications() {
+    public List<PollSpark> pollSparkNotifications(String appId) {
         LOG.info("polling spark service for any notifications");
-        return spark.pollSparkNotifications();
+        return spark.pollSparkNotifications(appId);
     }
 
 }

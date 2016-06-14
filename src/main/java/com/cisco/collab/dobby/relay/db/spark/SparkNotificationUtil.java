@@ -47,14 +47,23 @@ public class SparkNotificationUtil {
         return entity.notification;
     }
 
-    public static List<String> fromEntities(List<SparkNotification> entities) {
+    public static List<String> fromEntities(List<Object> entities) {
         List<String> list = new ArrayList<String>();
         if (entities == null) return list;
-        for (SparkNotification entity : entities) {
-            String spark = fromEntity(entity);
+        for (Object entity : entities) {
+            String spark = fromEntity((SparkNotification) entity);
             if (spark != null) {
                 list.add(spark);
             }
+        }
+        return list;
+    }
+
+    public static List<SparkNotification> toEntitiesFrom(List<Object> entities) {
+        List<SparkNotification> list = new ArrayList<SparkNotification>();
+        if (entities == null) return list;
+        for (Object entity : entities) {
+            list.add((SparkNotification) entity);
         }
         return list;
     }

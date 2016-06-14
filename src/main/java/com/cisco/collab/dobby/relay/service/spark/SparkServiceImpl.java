@@ -23,11 +23,11 @@ public class SparkServiceImpl implements SparkService {
 
     static ObjectMapper mapper = new ObjectMapper();
 
-    public void queueNotification(Spark notification) {
+    public void queueNotification(String appId, Spark notification) {
         LOG.info("pushing notification with Spark DAO");
         try {
             String spark = mapper.writeValueAsString(notification);
-            dao.push(spark);
+            dao.push(appId, spark);
         } catch (JsonProcessingException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
@@ -35,10 +35,10 @@ public class SparkServiceImpl implements SparkService {
         }
     }
 
-    public List<PollSpark> pollSparkNotifications() {
+    public List<PollSpark> pollSparkNotifications(String appId) {
         LOG.info("popping all notifications from Spark DAO");
         List<PollSpark> list = new ArrayList<PollSpark>();
-        for (String spark : dao.popAll()) {
+        for (String spark : dao.popAll(appId)) {
             try {
                 PollSpark poll = mapper.readValue(spark, PollSpark.class);
                 list.add(poll);

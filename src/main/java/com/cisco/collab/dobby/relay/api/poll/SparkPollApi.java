@@ -9,6 +9,7 @@ import org.springframework.stereotype.Component;
 
 import com.cisco.collab.dobby.relay.api.poll.model.PollSpark;
 import com.cisco.collab.dobby.relay.api.poll.resource.SparkPollResource;
+import com.cisco.collab.dobby.relay.api.spark.SparkApi;
 import com.cisco.collab.dobby.relay.service.poll.PollService;
 
 @Component
@@ -19,7 +20,7 @@ public class SparkPollApi implements SparkPollResource {
     PollService pollService;
 
     public GetPollSparkResponse getPollSpark() throws Exception {
-        List<PollSpark> msgs = pollService.pollSparkNotifications();
+        List<PollSpark> msgs = pollService.pollSparkNotifications(SparkApi.FakeAppId);
         if (msgs == null || msgs.isEmpty()) {
             return GetPollSparkResponse.withNotFound();            
         } else {

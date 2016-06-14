@@ -17,12 +17,14 @@ public class SparkApi implements SparkCallbackResource {
 
     @Autowired
     SparkService sparkNotification;
+    
+    public static final String FakeAppId = "1";
 
     private static Logger LOG = Logger.getLogger(SparkApi.class.getName());
 
     public PostSparkResponse postSpark(Spark entity) throws Exception {
         LOG.info("got message from " + entity.getData().getPersonEmail());
-        sparkNotification.queueNotification(entity);
+        sparkNotification.queueNotification(FakeAppId, entity);
         return PostSparkResponse.withOK();
     }
 
