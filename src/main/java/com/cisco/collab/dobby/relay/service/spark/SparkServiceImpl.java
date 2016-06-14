@@ -1,9 +1,11 @@
 package com.cisco.collab.dobby.relay.service.spark;
 
+import java.util.List;
 import java.util.logging.Logger;
 
 import org.springframework.stereotype.Service;
 
+import com.cisco.collab.dobby.relay.api.poll.model.PollSpark;
 import com.cisco.collab.dobby.relay.api.spark.model.Spark;
 
 @Service
@@ -13,5 +15,10 @@ public class SparkServiceImpl implements SparkService {
 
     public void queueNotification(Spark notification) {
         LOG.info("notification queue not implemented yet");
+    }
+
+    public List<PollSpark> pollSparkNotifications() {
+        LOG.info("polling not implemented yet");
+        return null;
     }
 }
