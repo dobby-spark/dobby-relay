@@ -14,11 +14,11 @@ public class PollServiceImpl implements PollService {
     private static Logger LOG = Logger.getLogger(PollServiceImpl.class.getName());
 
     @Autowired
-    SparkService sparkNotification;
+    SparkService spark;
     
     public List<PollSpark> pollSparkNotifications() {
-        LOG.info("polling not implemented yet, returning null list");
-        return null;
+        LOG.info("polling spark service for any notifications");
+        return spark.pollSparkNotifications();
     }
 
 }
